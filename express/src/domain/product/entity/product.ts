@@ -27,4 +27,25 @@ export class Product {
       throw new Error("Quantity cannot be negative");
     }
   }
+
+  public get id() {
+    return this.props.id;
+  }
+  public get name() {
+    return this.props.name;
+  }
+  public get price() {
+    return this.props.price;
+  }
+  public get quantity() {
+    return this.props.quantity;
+  }
+
+  public increseQuantity(quantity: number) {
+    this.props.quantity += quantity;
+  }
+
+  public decreseQuantity(quantity: number) {
+    this.props.quantity -= quantity;
+  }
 }
