@@ -4,7 +4,6 @@ export type ProductProps = {
   price: number;
   quantity: number;
 };
-
 export class Product {
   constructor(private props: ProductProps) {
     this.validate();
@@ -12,12 +11,13 @@ export class Product {
 
   public static create(name: string, price: number) {
     return new Product({
-      id: crypto.randomUUID(),
+      id: crypto.randomUUID().toString(),
       name,
       price,
       quantity: 0,
     });
   }
+
   public static with(props: ProductProps) {
     return new Product(props);
   }
